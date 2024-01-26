@@ -3,9 +3,11 @@
 :root {
     /* color variables */
     --grey: rgb(26,30,31);
+    --grey-less-opacity: rgba(34,34,34, 0.92);
     --dark-grey: rgb(22,22,22);
     --light-grey: rgb(43,43,43);
     --text-blue: rgb(0,163,224);
+    --text-hover-blue: rgb(0,128,176);
     --text-white: rgb(244,244,244);
     --text-hover: rgb(211,211,211);
     /* size variables */
@@ -14,42 +16,48 @@
 
 /* fonts */
 @font-face {
-    font-family: font0;
-    src: url(./fonts/file0.woff2);
-}
-@font-face {
-    font-family: font1;
-    src: url(./fonts/font.woff2);
-}
-@font-face {
-    font-family: font2;
+    font-family: font93c;
     src: url(./fonts/font1.woff2);
+    /* 643d94_93c16d86ec9d47d0a2a36894fbdd54fd */
 }
 @font-face {
-    font-family: font3;
+    font-family: fontdd2;
+    src: url(./fonts/font2.woff2);
+    /* 643d94_dd28b3957391427eb54de1c9eff7cfb1 */
+}
+@font-face {
+    font-family: fontf52;
     src: url(./fonts/font3.woff2);
+    /* 643d94_f52303b2efea42e1b4aeed119e42672e */
 }
 @font-face {
-    font-family: font4;
+    font-family: font773;
     src: url(./fonts/font4.woff2);
-}
-@font-face {
-    font-family: font5;
-    src: url(./fonts/font5.woff2);
+    /* dd97f4_7737b5e7be24426aa35c9f4311c1de96 */
 }
 
 body {
     width: 100vw;
     position: relative;
-    
+    overflow-x: hidden;
+    margin-top: 84px;
 }
 
 header {
     background-color: var(--grey);
+    position: fixed;
+    width: 100%;
+    height: 84px;
+    top: 0;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+header.full-opacity{
+    background-color: var(--grey-less-opacity);
 }
 
 .navbar {
-    position: static;
     width: var(--width);
     height: auto;
     display: flex;
@@ -57,6 +65,7 @@ header {
     align-items: center;
     margin-left: calc((100% - var(--width))/2);
     padding: 22px 0;
+    
 }
 
 .logo-svg {
@@ -73,7 +82,7 @@ header {
 
 .links li a {
     text-decoration: none;
-    font-family: 'font1';
+    font-family: 'fontdd2';
     font-size: 14px;
     line-height: 26px;
     color: var(--text-white);
@@ -108,14 +117,14 @@ header {
 }
 
 .main-header {
-    font-family: 'font4';
+    font-family: 'fontf52';
     font-size: 42px;
     font-weight: bold;
     color: var(--text-white);
 }
 
 .secondary-text {
-    font-family: 'font4';
+    font-family: 'fontf52';
     font-size: 34px;
     font-weight: bold;
     color: var(--text-white);
@@ -138,7 +147,7 @@ header {
 }
 
 .info {
-    font-family: 'font1';
+    font-family: 'fontdd2';
     font-size: 28px;
     line-height: 1.6em;
     color: var(--text-white);
@@ -146,7 +155,7 @@ header {
 
 .link-to-more {
     text-decoration: none;
-    font-family: 'font5';
+    font-family: 'font773';
     font-size: 20px;
     color: var(--text-blue);
     transition: color 0.4s ease 0s;
@@ -154,4 +163,87 @@ header {
 
 .link-to-more:hover {
     color: var(--text-hover);
+}
+
+.courses-wraper {
+    width: 100%;
+    background-color: var(--dark-grey);
+}
+
+.courses-div {
+    width: var(--width);
+    display: flex;
+    flex-direction: column;
+    margin-left: calc((100% - var(--width))/2);
+    padding: 34px 0;
+}
+
+.courses-title {
+    font-family: 'fontdd2';
+    font-size: 24px;
+    color: var(--text-white);
+    padding-bottom: 67px;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.courses-grid-item {
+    width: auto;
+    height: 416px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(85, 85, 85, 1);
+    border-radius: 6px;
+}
+
+.courses-grid-item-body {
+    width: 100%;
+    height: 100%;
+    padding: 0 22px;
+}
+
+.courses-grid-title {
+    font-family: 'fontdd2';
+    font-size: 18px;
+    line-height: 1.6em;
+    color: var(--text-white);
+    padding-top: 34px;
+}
+
+.courses-grid-info {
+    font-family: 'fontdd2';
+    font-size: 14px;
+    color: var(--text-white);
+    padding-top: 25px;
+}
+
+.link-wraper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 121px;
+    gap: 5px;
+}
+
+.fix {
+    margin-top: 93px;
+}
+
+.courses-grid-link {
+    text-decoration: none;
+    font-family: 'font93c';
+    font-size: 16px;
+    color: var(--text-blue);
+    transition: color 0.4s ease 0s;
+}
+
+.courses-grid-link:hover {
+    color: var(--text-hover-blue);
+}
+
+.blue-svg {
+    fill: #00AEEF;
 }
