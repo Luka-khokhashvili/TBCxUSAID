@@ -91,3 +91,36 @@ showSlide(currentSlideIndex);
 // Start the auto slide timer
 autoSlideInterval = startAutoSlide();
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Get all question elements
+    
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Get all question elements
+    var questionDivs = document.querySelectorAll('.question-div');
+
+    // Add click event listener to each question
+    questionDivs.forEach(function (questionDiv) {
+        var questionNameDiv = questionDiv.querySelector('.question-name-div');
+        var questionBody = questionDiv.querySelector('.question-body');
+
+        // Add click event listener to questionNameDiv
+        questionNameDiv.addEventListener('click', function () {
+            // Close other open question bodies
+            closeOtherQuestionBodies(questionDivs, questionDiv);
+
+            // Toggle visibility of the current question body
+            questionDiv.classList.toggle('show');
+        });
+    });
+
+    function closeOtherQuestionBodies(questionDivs, currentQuestionDiv) {
+        questionDivs.forEach(function (questionDiv) {
+            if (questionDiv !== currentQuestionDiv && questionDiv.classList.contains('show')) {
+                questionDiv.classList.remove('show');
+            }
+        });
+    }
+});
