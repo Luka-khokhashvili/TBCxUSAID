@@ -247,3 +247,104 @@ header.full-opacity{
 .blue-svg {
     fill: #00AEEF;
 }
+
+.partners-wraper {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    background-color: var(--light-grey);
+}
+
+.partners-title {
+    font-family: 'fontdd2';
+    font-size: 24px;
+    color: var(--text-white);
+    display: flex;
+    flex-direction: column;
+    margin-left: calc((100% - var(--width))/2);
+    padding-top: 30px;
+}
+
+.slider-button {
+    border: none;
+    background-color: transparent;
+    width: fit-content;
+}
+
+
+#prevButton {
+    position: absolute;
+    top: calc(50%);
+    left: 5%;
+}
+
+#nextButton {
+    position: absolute;
+    top: calc(50%);
+    right: 5%;
+}
+
+.slider-svg {
+    width: 20px;
+    fill: var(--text-white);
+    cursor: pointer;
+    stroke-width: 3;
+}
+
+.slider-svg:hover {
+    fill: var(--text-hover);
+}
+
+.next {
+    transform: scaleX(-1);
+}
+
+.partners-body {
+    position: relative;
+    width: var(--width);
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    padding: 80px 0;
+    margin-left: calc((100% - var(--width))/2);
+}
+
+.partners-body {
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 115px;
+  opacity: 0;
+  transition: opacity 1.6s ease;
+}
+
+.slide.show {
+  opacity: 1;
+}
+
+
+.last-slide-image {
+    margin-left: calc(var(--width)/2.5);
+}
+
+.dot-links {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.dot-link {
+    border: 3px solid white;
+    border-radius: 50%;
+}
