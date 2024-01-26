@@ -1,10 +1,121 @@
+
+/* Root element used Used to initialize color and size variables */
 :root {
+    /* color variables */
     --grey: rgb(26,30,31);
     --dark-grey: rgb(22,22,22);
     --light-grey: rgb(43,43,43);
-    --text-blue: rgb(0,173,238);
+    --text-blue: rgb(0,163,224);
     --text-white: rgb(244,244,244);
     --text-hover: rgb(211,211,211);
+    /* size variables */
+    --width: 980px;
+}
+
+/* fonts */
+@font-face {
+    font-family: font1;
+    src: url(./fonts/font.woff2);
+}
+@font-face {
+    font-family: font2;
+    src: url(./fonts/font1.woff2);
+}
+@font-face {
+    font-family: font3;
+    src: url(./fonts/font3.woff2);
+}
+@font-face {
+    font-family: font4;
+    src: url(./fonts/font4.woff2);
+}
+@font-face {
+    font-family: font5;
+    src: url(./fonts/font5.woff2);
+}
+
+body {
+    width: 100vw;
+    position: relative;
+    
+}
+
+header {
+    background-color: var(--grey);
+}
+
+.navbar {
+    position: static;
+    width: var(--width);
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: calc((100% - var(--width))/2);
+    padding: 22px 0;
+}
+
+.logo-svg {
+    width: 182px;
+    height: 40px;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-left: 37%;
+}
+
+.links li a {
+    text-decoration: none;
+    font-family: 'font1';
+    font-size: 14px;
+    line-height: 26px;
+    color: var(--text-white);
+    transition: color 0.4s ease 0s;
+    padding: 0 10px;
+}
+
+.links li a:hover,
+.links li a[data-state~=selected] {
+    color: var(--text-blue);
+}
+
+.main-container {
+    position: relative;
+    height: 352px;
+}
+
+.cover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -999;
+}
+
+.welcome-div {
+    width: var(--width);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    margin-left: calc((100% - var(--width))/2);
+}
+
+.main-header {
+    font-family: 'font4';
+    font-size: 42px;
+    font-weight: bold;
+    color: var(--text-white);
+}
+
+.secondary-text {
+    font-family: 'font4';
+    font-size: 34px;
+    font-weight: bold;
+    color: var(--text-white);
 }
 
 
