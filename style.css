@@ -14,6 +14,10 @@
 
 /* fonts */
 @font-face {
+    font-family: font0;
+    src: url(./fonts/file0.woff2);
+}
+@font-face {
     font-family: font1;
     src: url(./fonts/font.woff2);
 }
@@ -77,8 +81,7 @@ header {
     padding: 0 10px;
 }
 
-.links li a:hover,
-.links li a[data-state~=selected] {
+.links li a:hover {
     color: var(--text-blue);
 }
 
@@ -118,4 +121,37 @@ header {
     color: var(--text-white);
 }
 
+.info-wraper {
+    width: 100%;
+    background-color: var(--light-grey);
+}
 
+.info-div {
+    width: var(--width);
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+    margin-left: calc((100% - var(--width))/2);
+    padding: 55px 0;
+}
+
+.info {
+    font-family: 'font1';
+    font-size: 28px;
+    line-height: 1.6em;
+    color: var(--text-white);
+}
+
+.link-to-more {
+    text-decoration: none;
+    font-family: 'font5';
+    font-size: 20px;
+    color: var(--text-blue);
+    transition: color 0.4s ease 0s;
+}
+
+.link-to-more:hover {
+    color: var(--text-hover);
+}
