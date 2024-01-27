@@ -1,5 +1,5 @@
 
-/* Root element used Used to initialize color and size variables */
+/* Root element Used to initialize color and size variables */
 :root {
     /* color variables */
     --grey: rgb(26,30,31);
@@ -67,7 +67,99 @@ header.full-opacity{
     align-items: center;
     margin-left: calc((100% - var(--width))/2);
     padding: 22px 0;
-    
+}
+
+/*CSS*/
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  width: 30px;
+  height: 40px;
+  z-index: 10000;
+}
+
+.btn-line {
+  height: 3px;
+  background: white;
+  margin: 3px auto;
+  transition: all .3s ease-in-out;
+}
+
+.btn-line-first {
+    width: 50%;
+    margin-left: 0;
+}
+
+.btn-line-second {
+    width: 100%;
+}
+
+.btn-line-third {
+    width: 50%;
+    margin-right: 0px;
+}
+
+/*Animate lines*/
+.menu-btn.open .btn-line:nth-child(1) {
+  transform: translateY(4px) rotate(45deg);
+}
+.menu-btn.open .btn-line:nth-child(2) {
+    transform: translateY(0) rotate(-45deg);
+    width: 101%;
+    margin-left: -7%;
+}
+.menu-btn.open .btn-line:nth-child(3) {
+  transform: translateY(-3px) translateX(-4px) rotate(45deg);
+}
+
+.burger-links {
+    display: none;
+    transition: transform 0.3s ease-in-out, display 0.3s ease-in-out;
+}
+
+.burger-links-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 998;
+}
+
+.menu-open .burger-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 62%;
+    background-color: var(--dark-grey);
+    padding-top: 23%;
+    gap: 2%;
+    transform: translateX(0);
+    z-index: 999;
+}
+
+.menu-open .content {
+    filter: brightness(0.5);
+}
+
+.dimmed {
+    filter: brightness(0.6);
+}
+
+.burger-link {
+    text-decoration: none;
+    font-family: 'fontdd2';
+    font-size: 18px;
+    line-height: 1.6em;
+    transition: color 0.4s ease 0s;
+    padding: 0 10px;
 }
 
 .logo-svg {
@@ -82,17 +174,20 @@ header.full-opacity{
     margin-left: 37%;
 }
 
-.links li a {
+.nav-bar-link {
     text-decoration: none;
     font-family: 'fontdd2';
     font-size: 14px;
     line-height: 26px;
-    color: var(--text-white);
     transition: color 0.4s ease 0s;
     padding: 0 10px;
 }
 
-.links li a:hover {
+.inactive {
+    color: var(--text-white);
+}
+
+.links li a:hover, .active {
     color: var(--text-blue);
 }
 
@@ -101,11 +196,26 @@ header.full-opacity{
     height: 352px;
 }
 
-.cover-img {
+.dektop-cover-img {
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
     z-index: -999;
+}
+
+.mobile-cover-img {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1999;
+    width: 100%;
+    height: 300px;
+    background-image: url('./images/mobile-cover.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.8);
 }
 
 .welcome-div {
@@ -122,6 +232,7 @@ header.full-opacity{
     font-family: 'fontf52';
     font-size: 42px;
     font-weight: bold;
+    line-height: 1.6em;
     color: var(--text-white);
 }
 
@@ -129,6 +240,7 @@ header.full-opacity{
     font-family: 'fontf52';
     font-size: 34px;
     font-weight: bold;
+    line-height: 1.6em;
     color: var(--text-white);
 }
 
@@ -202,6 +314,10 @@ header.full-opacity{
     border-radius: 6px;
 }
 
+.courses-grid-image {
+    border-radius: inherit;
+}
+
 .courses-grid-item-body {
     width: 100%;
     height: 100%;
@@ -253,7 +369,7 @@ header.full-opacity{
 .partners-wraper {
     position: relative;
     width: 100%;
-    height: fit-content;
+    height: 500px;
     background-color: var(--light-grey);
 }
 
@@ -278,12 +394,14 @@ header.full-opacity{
     position: absolute;
     top: calc(50%);
     left: 5%;
+    z-index: 1000;
 }
 
 #nextButton {
     position: absolute;
     top: calc(50%);
     right: 5%;
+    z-index: 1000;
 }
 
 .slider-svg {
@@ -303,11 +421,11 @@ header.full-opacity{
 
 .partners-body {
     position: relative;
-    width: clac(var(--width)/1.5);
-    height: 100px;
+    width: calc(var(--width)/1.5);
+    /* height: 100px; */
     display: flex;
     flex-direction: row;
-    padding: 80px 0 140px 0;
+    /* padding: 80px 0 140px 0; */
     margin-left: calc((100% - var(--width))/2);
 }
 
@@ -382,6 +500,10 @@ header.full-opacity{
     transition: color 0.3s ease 0s;
 }
 
+.mobile {
+    display: none;
+}
+
 .questions-link:hover {
     color: var(--text-hover);
 }
@@ -404,14 +526,19 @@ header.full-opacity{
 .question-name {
     font-family: 'fontdd2';
     font-size: 18px;
+    line-height: 1.6em;
     color: var(--text-white);
     width: 490px;
     margin-right: 20px; /* Adjusted margin */
 }
 
-.question-name-div svg {
+.arrow-svg {
     fill: white;
     margin-left: 350px;
+}
+
+.arrow-up {
+    transform: scaleY(-1);
 }
 
 .question-body {
@@ -421,7 +548,7 @@ header.full-opacity{
 }
 
 .question-div.show .question-body {
-    max-height: 500px; /* Set a value large enough to accommodate your content */
+    max-height: 1100px; /* Set a value large enough to accommodate your content */
     transition: max-height 0.5s ease-in-out; /* Updated transition property */
 }
 
@@ -467,6 +594,11 @@ footer {
     flex-direction: row;
     margin-left: calc((100% - var(--width))/2);
     padding: 60px 0 40px 0;
+}
+
+.footer-tbc-logo {
+    width: 120px;
+    height: auto;
 }
 
 .footer-info {
@@ -532,3 +664,4 @@ footer {
     background-color: var(--text-hover);
     color: black;
 }
+

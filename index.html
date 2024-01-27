@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./responsive.css">
     <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
     <title>TBC x USAID</title>
 </head>
@@ -39,17 +40,29 @@
                 </g>
             </svg></a>
             <ul class="links">
-                <li><a href="">მთავარი</a></li>
-                <li><a href="">TBC IT</a></li>
-                <li><a href="">TBC x USAID</a></li>
-                <li><a href="">რისკები</a></li>
+                <li><a href="" class="nav-bar-link inactive">მთავარი</a></li>
+                <li><a href="" class="nav-bar-link inactive">TBC IT</a></li>
+                <li><a href="" class="nav-bar-link active">TBC x USAID</a></li>
+                <li><a href="" class="nav-bar-link inactive">რისკები</a></li>
+            </ul>
+            <div class="menu-btn" onclick="toggleMenu()">
+                <div class="btn-line btn-line-first"></div>
+                <div class="btn-line btn-line-second"></div>
+                <div class="btn-line btn-line-third"></div>
+            </div>
+            <ul class="burger-links">
+                <li><a href="" class="burger-link inactive">მთავარი</a></li>
+                <li><a href="" class="burger-link inactive">TBC IT</a></li>
+                <li><a href="" class="burger-link active">TBC x USAID</a></li>
+                <li><a href="" class="burger-link inactive">რისკები</a></li>
             </ul>
         </nav>
     </header>
-    <section class="main-container" id="main-container">
+    <section class="main-container content" id="main-container">
         <!-- Welcome section -->
         <div class="welcome-div">
-            <img class="cover-img" src="./images/cover.jpg" alt="cover, tbc-cover">
+            <img class="dektop-cover-img" src="./images/cover.jpg" alt="cover, tbc-cover">
+            <div class="mobile-cover-img"></div>
             <h1 class="main-header">TBC x USAID</h1>
             <h4 class="secondary-text">ᲢᲔᲥᲜᲝᲚᲝᲒᲘᲣᲠᲘ ᲒᲐᲜᲐᲗᲚᲔᲑᲘᲡᲗᲕᲘᲡ</h4>
         </div>
@@ -59,7 +72,7 @@
             <div class="info-div">
                 <p class="info">„ TBC x USAID - ტექნოლოგიური განათლებისთვის “ პროგრამა  საინფორმაციო ტექნოლოგიებით
                     დაინტერესებულ ადამიანებს გთავაზობთ სრულად დაფინანსებულ ონლაინ საგანმანათლებლო 
-                    პრაქტიკულ კურსებს  სხვადასხვა ICT მიმართულებით. <br>წარმატებულ კურსდამთავრებულებს 
+                    პრაქტიკულ კურსებს  სხვადასხვა ICT მიმართულებით. <br class="mobile-hidden">წარმატებულ კურსდამთავრებულებს 
                     ეძლევათ შესაძლებლობა დასაქმდნენ თიბისისა და მის პარტნიორ კომპანიებში.
                 </p>
                 <a href="" class="link-to-more">გაიგე მეტი</a>
@@ -159,7 +172,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="courses-grid-item">
+                    <div class="courses-grid-item item-fixer">
                         <img src="./images/advanced_cybersecurity_cover.jpg" alt="advanced cybersecurity" class="courses-grid-image">
                         <div class="courses-grid-item-body">
                             <h5 class="courses-grid-title">Advanced Cybersecurity <br>Course</h5>
@@ -247,7 +260,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="courses-grid-item">
+                    <div class="courses-grid-item item-fixer">
                         <img src="./images/information_security_governance_cover.jpg" alt="information security governance" class="courses-grid-image">
                         <div class="courses-grid-item-body">
                             <h5 class="courses-grid-title">Information Security<br>Governance</h5>
@@ -313,12 +326,12 @@
             <div class="questions-body">
                 <div class="questions-header">
                     <h3 class="questions-title">ხშირად დასმული კითხვები</h3>
-                    <a href="" class="questions-link">ყველა კითხვა</a>
+                    <a href="" class="questions-link desktop">ყველა კითხვა</a>
                 </div>
                 <div class="question-div">
                     <div class="question-name-div">
                         <h4 class="question-name">როგორ ხდება კურსებზე რეგისტრაცია და შერჩევა?</h4>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path class="arrowDown" d="M8.14644661,10.1464466 C8.34170876,9.95118446 8.65829124,9.95118446 8.85355339,10.1464466 L12.4989857,13.7981758 L16.1502401,10.1464466 C16.3455022,9.95118446 16.6620847,9.95118446 16.8573469,10.1464466 C17.052609,10.3417088 17.052609,10.6582912 16.8573469,10.8535534 L12.4989857,15.2123894 L8.14644661,10.8535534 C7.95118446,10.6582912 7.95118446,10.3417088 8.14644661,10.1464466 Z"></path></svg>
+                        <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path class="arrowDown" d="M8.14644661,10.1464466 C8.34170876,9.95118446 8.65829124,9.95118446 8.85355339,10.1464466 L12.4989857,13.7981758 L16.1502401,10.1464466 C16.3455022,9.95118446 16.6620847,9.95118446 16.8573469,10.1464466 C17.052609,10.3417088 17.052609,10.6582912 16.8573469,10.8535534 L12.4989857,15.2123894 L8.14644661,10.8535534 C7.95118446,10.6582912 7.95118446,10.3417088 8.14644661,10.1464466 Z"></path></svg>
                     </div>
                     <div class="question-body">
                         <p class="question-desc">კურსზე რეგისტრაციისთვის უნდა გაიარო რამდენიმე ეტაპი:</p>
@@ -334,7 +347,7 @@
                 <div class="question-div">
                     <div class="question-name-div">
                         <h4 class="question-name">შემიძლია თუ არა ერთზე მეტ კურსზე რეგისტრაცია?</h4>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path class="arrowDown" d="M8.14644661,10.1464466 C8.34170876,9.95118446 8.65829124,9.95118446 8.85355339,10.1464466 L12.4989857,13.7981758 L16.1502401,10.1464466 C16.3455022,9.95118446 16.6620847,9.95118446 16.8573469,10.1464466 C17.052609,10.3417088 17.052609,10.6582912 16.8573469,10.8535534 L12.4989857,15.2123894 L8.14644661,10.8535534 C7.95118446,10.6582912 7.95118446,10.3417088 8.14644661,10.1464466 Z"></path></svg>
+                        <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path class="arrowDown" d="M8.14644661,10.1464466 C8.34170876,9.95118446 8.65829124,9.95118446 8.85355339,10.1464466 L12.4989857,13.7981758 L16.1502401,10.1464466 C16.3455022,9.95118446 16.6620847,9.95118446 16.8573469,10.1464466 C17.052609,10.3417088 17.052609,10.6582912 16.8573469,10.8535534 L12.4989857,15.2123894 L8.14644661,10.8535534 C7.95118446,10.6582912 7.95118446,10.3417088 8.14644661,10.1464466 Z"></path></svg>
                     </div>
                     <div class="question-body">
                         <p class="question-info">TBC X USAID ტექნოლოგიური განათლებისთვის პროგრამაში თითოეულ კანდიდატს აქვს მხოლოდ ერთი კურსის გავლის შესაძლებლობა. გარდა Information Security და Python კურსებისა, სადაც Basic დონის გავლის შემდეგ შესაძლებელია სწავლის გაგრძელება Advance დონეზე.</p>
@@ -343,32 +356,34 @@
                 <div class="question-div">
                     <div class="question-name-div">
                         <h4 class="question-name">რა ღირს სწავლა პროგრამის ფარგლებში?</h4>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path class="arrowDown" d="M8.14644661,10.1464466 C8.34170876,9.95118446 8.65829124,9.95118446 8.85355339,10.1464466 L12.4989857,13.7981758 L16.1502401,10.1464466 C16.3455022,9.95118446 16.6620847,9.95118446 16.8573469,10.1464466 C17.052609,10.3417088 17.052609,10.6582912 16.8573469,10.8535534 L12.4989857,15.2123894 L8.14644661,10.8535534 C7.95118446,10.6582912 7.95118446,10.3417088 8.14644661,10.1464466 Z"></path></svg>
+                        <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path class="arrowDown" d="M8.14644661,10.1464466 C8.34170876,9.95118446 8.65829124,9.95118446 8.85355339,10.1464466 L12.4989857,13.7981758 L16.1502401,10.1464466 C16.3455022,9.95118446 16.6620847,9.95118446 16.8573469,10.1464466 C17.052609,10.3417088 17.052609,10.6582912 16.8573469,10.8535534 L12.4989857,15.2123894 L8.14644661,10.8535534 C7.95118446,10.6582912 7.95118446,10.3417088 8.14644661,10.1464466 Z"></path></svg>
                     </div>
                     <div class="question-body">
                         <p class="question-info">პროგრამის ფარგლებში კურსებზე სწავლა სრულიად დაფინანსებულია თიბისი ბანკისა და USAID-ის მიერ.</p>
                     </div>
                 </div>
+                <a href="" class="questions-link mobile">ყველა კითხვა</a>
             </div>
         </div>
         <!-- End of Q&A section -->
         <!-- Footer section -->
         <footer>
             <div class="footer-body">
-                <div class="footer-info">
-                    <img src="./images/tbc_logo.png" alt="tbc bank logo" class="footer-tbc-logo">
-                    <p class="copyright"><span class="semi-bold">© 2023</span> ყველა უფლება დაცულია</p>
-                    <a href="" class="terms-and-conditions">წესები და პირობები</a>
+            <img src="./images/tbc_logo.png" alt="tbc bank logo" class="footer-tbc-logo">
+              <div class="footer-info">
+                <p class="copyright"><span class="semi-bold">© 2023</span> ყველა უფლება დაცულია</p>
+                <a href="" class="terms-and-conditions">წესები და პირობები</a>
+              </div>
+              <div class="footer-links-div">
+                <a href="" class="message-us-button">მოგვწერეთ</a>
+                <div class="social-pages">
+                  <a href=""><img src="./images/facebook-icon.png" alt="facebook page link" class="social-link"></a>
+                  <a href=""><img src="./images/youtube-icon.png" alt="youtube page link" class="social-link"></a>
                 </div>
-                <div class="footer-links-div">
-                    <div class="social-pages">
-                        <a href=""><img src="./images/facebook-icon.png" alt="facebook page link" class="social-link"></a>
-                        <a href=""><img src="./images/youtube-icon.png" alt="youtube page link" class="social-link"></a>
-                    </div>
-                    <a href="" class="message-us-button">მოგვწერეთ</a>
-                </div>
+              </div>
             </div>
-        </footer>
+          </footer>
+          
         <!-- End of Footer section -->
     </section>
 

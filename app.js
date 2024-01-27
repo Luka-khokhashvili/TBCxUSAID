@@ -98,29 +98,70 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Get all question elements
-    var questionDivs = document.querySelectorAll('.question-div');
+  // Get all question elements
+  let questionDivs = document.querySelectorAll('.question-div');
+  
+  // Add click event listener to each question
+  questionDivs.forEach(function (questionDiv) {
+    let questionNameDiv = questionDiv.querySelector('.question-name-div');
+    let questionBody = questionDiv.querySelector('.question-body');
+    let arrowSvg = questionDiv.querySelector('.arrow-svg'); // Corrected placement
 
-    // Add click event listener to each question
-    questionDivs.forEach(function (questionDiv) {
-        var questionNameDiv = questionDiv.querySelector('.question-name-div');
-        var questionBody = questionDiv.querySelector('.question-body');
+      // Add click event listener to questionNameDiv
+      questionNameDiv.addEventListener('click', function () {
+          // Close other open question bodies
+          closeOtherQuestionBodies(questionDivs, questionDiv);
 
-        // Add click event listener to questionNameDiv
-        questionNameDiv.addEventListener('click', function () {
-            // Close other open question bodies
-            closeOtherQuestionBodies(questionDivs, questionDiv);
+          // Toggle visibility of the current question body
+          questionDiv.classList.toggle('show');
+          arrowSvg.classList.toggle('arrow-up'); // Corrected toggle
+      });
+  });
 
-            // Toggle visibility of the current question body
-            questionDiv.classList.toggle('show');
-        });
-    });
-
-    function closeOtherQuestionBodies(questionDivs, currentQuestionDiv) {
-        questionDivs.forEach(function (questionDiv) {
-            if (questionDiv !== currentQuestionDiv && questionDiv.classList.contains('show')) {
-                questionDiv.classList.remove('show');
-            }
-        });
-    }
+  function closeOtherQuestionBodies(questionDivs, currentQuestionDiv) {
+      questionDivs.forEach(function (questionDiv) {
+          if (questionDiv !== currentQuestionDiv && questionDiv.classList.contains('show')) {
+              questionDiv.classList.remove('show');
+              // Also remove the arrow-up class from the arrow in the closed question
+              questionDiv.querySelector('.arrow-svg').classList.remove('arrow-up');
+          }
+      });
+  }
 });
+
+//JavaScript
+const menuBtn = document.querySelector('.menu-btn');
+let menuOpen = false;
+menuBtn.addEventListener('click', () => {
+  if(!menuOpen) {
+    menuBtn.classList.add('open');
+    menuOpen = true;
+  } else {
+    menuBtn.classList.remove('open');
+    menuOpen = false;
+  }
+});
+
+function toggleMenu() {
+  const navbar = document.querySelector('.navbar');
+  const burgerLinks = document.querySelector('.burger-links');
+  const content = document.querySelector('.content');
+
+  // Ensure elements exist before manipulating them
+  if (navbar && burgerLinks && content) {
+    navbar.classList.toggle('menu-open');
+
+    // Check if menu is open
+    const isOpen = navbar.classList.contains('menu-open');
+
+    // Adjust brightness of background content
+    if (isOpen) {
+      content.classList.add('dimmed');
+    } else {
+      content.classList.remove('dimmed');
+    }
+  } else {
+    console.error('One or more elements not found.');
+  }
+}
+
