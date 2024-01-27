@@ -1,5 +1,5 @@
 /* Responsive media query for mobile */
-@media screen and (min-width: 430px) {
+@media screen and (max-width: 600px) {
     header {
         position: fixed;
         width: 100vw;
