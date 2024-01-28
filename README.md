@@ -4,8 +4,8 @@
 
 - [პროექტის შესახებ](#პროექტის-შესახებ)
   - [სტრუქტურა](#სტრუქტურა)
-  - [Screenshot](#გვერდის-სქრინი)
-  - [Links](#მისამართები)
+  - [გვერდის სქრინი](#გვერდის-სქრინი)
+  - [მისამართები](#მისამართები)
 - [გამოყენებული ტექნოლიგიები](#გამოყენებული-ტექნოლოგიები)
 - [პროექტის გაშვების ინსტრუქცია](#ინსტრუქცია)
 - [ავტორი](#ავტორი)
@@ -27,7 +27,7 @@
 
 ![](./images/page-screenshot.png)
 
-### მისამართები
+### გვერდის მისამართები
 
 - რეპოზიტორია: [Github Repository](https://github.com/Luka-khokhashvili/TBCxUSAID.git)
 - Live გვერდი: [Github live page](https://luka-khokhashvili.github.io/TBCxUSAID/)
@@ -55,6 +55,5 @@
 
 ლუკა ხოხაშვილი
 
-- Github - [luka-khokhashvili](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Github - [Luka-khokhashvili](https://github.com/Luka-khokhashvili)
+- Gmail - [khokhashvililuka](khokhashvililuka@gmail.com)
