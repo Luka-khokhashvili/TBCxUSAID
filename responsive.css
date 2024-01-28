@@ -1,208 +1,233 @@
-/* Responsive media query for mobile */
+/* Responsive design file for mobile devices(screen witdth less then 600px) */
+
+/* -------- Table of content -------- */
+/* 
+    1. Header and navbar styles
+    2. Welcome section styles
+    3. Info section styles
+    4. Courses grid section styles
+    5. Partners slider section styles
+    6. Questions section styles
+    7. Footer section styles
+*/
+/* ---------------------------------- */
+
 @media screen and (max-width: 600px) {
-    header {
-        position: fixed;
-        width: 100vw;
-        height: auto;
-    }
+    /* 1. header and navbar styles */
+  header {
+    position: fixed;
+    width: 100vw;
+    height: auto;
+  }
 
-    .navbar {
-      width: 100vw;
-      height: auto;
-      padding: 22px 20px; /* Adjust padding for better spacing */
-      margin-left: 0;
-    }
-  
-    .menu-btn {
-      display: flex; /* Show the menu button */
-      /* align-items: flex-end; */
-      margin-left: 40%;
-    }
-  
-    .links {
-      display: none; /* Hide the links */
-    }
+  .hide {
+    top: -100%;
+  }
 
-    .cover-img {
-        width: 100%
-    }
+  .navbar {
+    width: 100vw;
+    height: auto;
+    padding: 22px 20px; /* Adjust padding for better spacing */
+    margin-left: 0;
+  }
 
-    .welcome-div {
-        width: 95%;
-        height: 85%;
-        margin: 0 auto;
-        padding-left: 5%;
-        gap: 20px;
-    }
+  .menu-btn {
+    display: flex; /* Show the menu button */
+    margin-left: 40%;
+  }
 
-    .main-header {
-        font-size: 33px;
-        line-height: 0;
-        margin-top: 10%;
-    }
+  .links {
+    display: none; /* Hide the links */
+  }
 
-    .secondary-text {
-        font-size: 31px;
-    }
+  /* 2. welcome section styles */
+  .cover-img {
+    width: 100%;
+  }
 
-    .dektop-cover-img {
-        display: none;
-    }
+  .welcome-div {
+    width: 95%;
+    height: 85%;
+    margin: 0 auto;
+    padding-left: 5%;
+    gap: 20px;
+  }
 
-    /* Adjust the positioning of the image on smaller screens */
-    .mobile-cover-img {
-        display: block;
-        height: 300px; /* Adjust the height to show the desired portion of the image */
-        background-position: center; /* Position the image in the center */
-    }
+  .main-header {
+    font-size: 33px;
+    margin-top: 10%;
+  }
 
-    .info-div {
-        width: 95%;
-        height: fit-content;
-        margin: 0 auto;
-        padding-left: 5%;
-    }
+  .secondary-text {
+    font-size: 31px;
+  }
 
-    .info {
-        width: 92%;
-        font-size: 21.5px;
-    }
+  .dektop-cover-img {
+    display: none;
+  }
 
-    .courses-div {
-        width: 90%;
-        margin: 0 auto;
-        padding-left: 7%;
-    }
+  /* Adjust the positioning of the image on smaller screens */
+  .mobile-cover-img {
+    display: block;
+    height: 300px;
+    background-position: center; /* Position the image in the center */
+  }
 
-    .courses-grid {
-        grid-template-columns: repeat(1, 1fr);
-        width: 100%;
-    }
+  /* 3. Info section styles */
+  .info-div {
+    width: 95%;
+    height: fit-content;
+    margin: 0 auto;
+    padding-left: 5%;
+  }
 
-    .courses-grid-item {
-        width: 90%;
-        height: 355px;
-    }
+  .info {
+    width: 92%;
+    font-size: 21.5px;
+  }
 
-    .link-wraper {
-        margin-top: 10%;
-    }
+  /* 4. Courses grid section styles */
+  .courses-div {
+    width: 90%;
+    margin: 0 auto;
+    padding-left: 7%;
+  }
 
-    .fix {
-        margin-top: 6%;
-    }
+  .courses-grid {
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+  }
 
-    .partners-title {
-        margin-left: 10%;
-    }
+  .courses-grid-item {
+    width: 90%;
+    height: 355px;
+  }
 
-    #prevButton, #nextButton {
-        display: none;
-    }
+  .link-wraper {
+    margin-top: 10%;
+  }
 
-    .partners-body {
-        width: 95%;
-        /* height: 235px; */
-        margin: 0 auto;
-        padding-left: 5%;
-    }
+  .fix {
+    margin-top: 6%;
+  }
 
-    .slide {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        top: 50px;
-        left: 80px;
-        align-items: center;
-        justify-content: center;
-    }
+  /* 5. Partners slider section styles */
+  .partners-title {
+    margin-left: 10%;
+  }
 
-    .last-slide-image {
-        margin-left: 0;
-        margin-top: 50%;
-    }
+  #prevButton,
+  #nextButton {
+    display: none;
+  }
 
-    .dot-links {
-        top: 90%;
-    }
+  .partners-body {
+    width: 95%;
+    margin: 0 auto;
+    padding-left: 5%;
+  }
 
-    .questions-body {
-        width: 81%;
-    }
+  .slide {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    top: 50px;
+    left: 80px;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .question-name {
-        width: 300px;
-    }
+  .last-slide-image {
+    margin-left: 0;
+    margin-top: 50%;
+  }
 
-    .desktop {
-        display: none;
-    }
+  .dot-links {
+    top: 90%;
+  }
 
-    .mobile {
-        display: block;
-        margin: 10% auto 0 auto;
-    }
+  /* 6. Questions section styles */
+  .questions-body {
+    width: 81%;
+  }
 
-    .arrow-svg {
-        margin-left: 20px;
-    }
+  .question-name {
+    width: 300px;
+  }
 
-    /* For mobile devices */
-    .footer-body {
-        width: 80%;
-        display: flex;
-        flex-direction: column;
-        margin-left: 10%;
-    }
+  .desktop {
+    display: none;
+  }
 
-    .footer-tbc-logo {
-        position: static;
-        order: 0;
-        width: 165px;
-    }
-  
-    .footer-links-div {
-        order: 3;
-    }
-  
-    .footer-info {
-        order: 4;
-        margin-top: 20px;
-        width: 100%;
-    }
+  .mobile {
+    display: block;
+    margin: 10% auto 0 auto;
+  }
 
-    .copyright {
-        order: 2;
-    }
+  .arrow-svg {
+    margin-left: 20px;
+  }
 
-    .terms-and-conditions {
-        order: 1;
-    }
-  
-    .social-pages {
-        order: 2;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 10px;
-    }
+  /* 7. Footer section styles */
+  .footer-body {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+  }
 
-    .footer-links-div {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 10px;
-        margin: 5% 0;
-    }
+  .footer-tbc-logo {
+    position: static;
+    order: 0;
+    width: 165px;
+  }
 
-    .social-link {
-        width: 50px;
-        height: 50px;
-    }
+  .footer-links-div {
+    order: 3;
+  }
 
-    .message-us-button {
-        margin-top: 10px;
-        height: 50px;
-    }
+  .footer-info {
+    order: 4;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .copyright {
+    order: 2;
+  }
+
+  .terms-and-conditions {
+    order: 1;
+  }
+
+  .social-pages {
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .footer-links-div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 5% 0;
+  }
+
+  .social-link {
+    width: 50px;
+    height: 50px;
+  }
+
+  .message-us-button {
+    margin-top: 10px;
+    height: 50px;
+  }
 }
+
+/* ------------------------------------- */
+/* -- END OF RESPONSIVE DESIGN STYLES -- */
+/* ------------------------------------- */
