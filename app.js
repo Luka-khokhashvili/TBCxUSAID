@@ -131,6 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //JavaScript
 const menuBtn = document.querySelector('.menu-btn');
+const content = document.querySelector('.content');
 let menuOpen = false;
 menuBtn.addEventListener('click', () => {
   if(!menuOpen) {
@@ -141,6 +142,11 @@ menuBtn.addEventListener('click', () => {
     menuOpen = false;
   }
 });
+content.addEventListener('click', () => {
+  menuBtn.classList.remove('open');
+  menuOpen = false;
+});
+
 
 function toggleMenu() {
   const navbar = document.querySelector('.navbar');
@@ -150,6 +156,11 @@ function toggleMenu() {
   // Ensure elements exist before manipulating them
   if (navbar && burgerLinks && content) {
     navbar.classList.toggle('menu-open');
+
+    content.addEventListener('click', () => {
+      navbar.classList.remove('menu-open');
+      content.classList.remove('dimmed');
+    });
 
     // Check if menu is open
     const isOpen = navbar.classList.contains('menu-open');
@@ -164,4 +175,5 @@ function toggleMenu() {
     console.error('One or more elements not found.');
   }
 }
+
 

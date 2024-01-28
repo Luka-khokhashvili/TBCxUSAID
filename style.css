@@ -51,12 +51,16 @@ header {
     width: 100%;
     height: 84px;
     top: 0;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, top 0.4s ease 0s;
     z-index: 1000;
 }
 
 header.full-opacity{
     background-color: var(--grey-less-opacity);
+}
+
+.hide {
+    top: -100%;
 }
 
 .navbar {
@@ -75,22 +79,25 @@ header.full-opacity{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: absolute;
+  top: 23%;
+  right: 7%;
   cursor: pointer;
-  width: 30px;
-  height: 40px;
+  width: 38px;
+  height: 50px;
   z-index: 10000;
 }
 
 .btn-line {
-  height: 3px;
+  height: 4px;
   background: white;
-  margin: 3px auto;
+  margin: 4px auto;
+  border-radius: 40px;
   transition: all .3s ease-in-out;
 }
 
 .btn-line-first {
-    width: 50%;
+    width: 54%;
     margin-left: 0;
 }
 
@@ -99,61 +106,77 @@ header.full-opacity{
 }
 
 .btn-line-third {
-    width: 50%;
+    width: 57%;
     margin-right: 0px;
+}
+
+.menu-btn.open {
+    filter: brightness(0.5);
 }
 
 /*Animate lines*/
 .menu-btn.open .btn-line:nth-child(1) {
-  transform: translateY(4px) rotate(45deg);
+  transform: translateY(4.4px) rotate(-135deg);
+  background: #737373;
 }
 .menu-btn.open .btn-line:nth-child(2) {
     transform: translateY(0) rotate(-45deg);
-    width: 101%;
+    width: 110%;
     margin-left: -7%;
+    background: #737373;
 }
 .menu-btn.open .btn-line:nth-child(3) {
-  transform: translateY(-3px) translateX(-4px) rotate(45deg);
+  transform: translateY(-4px) translateX(-1px) rotate(-135deg);
+  background: #737373;
 }
 
 .burger-links {
-    display: none;
-    transition: transform 0.3s ease-in-out, display 0.3s ease-in-out;
-}
-
-.burger-links-background {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 998;
-}
-
-.menu-open .burger-links {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: 0;
+    right: -100%;
     height: 100vh;
     width: 62%;
-    background-color: var(--dark-grey);
+    background-color: var(--grey);
     padding-top: 23%;
     gap: 2%;
-    transform: translateX(0);
     z-index: 999;
+    transition: all 0.5s ease;
 }
 
-.menu-open .content {
-    filter: brightness(0.5);
+.menu-open .burger-links {
+    right: 0;
+}
+
+.content {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    transition: background-color 0.4s ease;
+    z-index: 997;
 }
 
 .dimmed {
-    filter: brightness(0.6);
+    background-color: rgba(34,34,34, 0.72);
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.burger-links li {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .burger-link {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
     text-decoration: none;
     font-family: 'fontdd2';
     font-size: 18px;
@@ -161,6 +184,7 @@ header.full-opacity{
     transition: color 0.4s ease 0s;
     padding: 0 10px;
 }
+
 
 .logo-svg {
     width: 182px;
@@ -597,7 +621,8 @@ footer {
 }
 
 .footer-tbc-logo {
-    width: 120px;
+    position: absolute;
+    width: auto;
     height: auto;
 }
 
@@ -607,6 +632,7 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 30px;
+    margin-top: 7%;
 }
 
 .copyright {
@@ -658,6 +684,7 @@ footer {
     font-size: 16px;
     color: var(--text-white);
     transition: color 0.4s ease 0s, background-color 0.4s ease 0s;
+    order: 2;
 }
 
 .message-us-button:hover {

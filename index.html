@@ -45,6 +45,7 @@
                 <li><a href="" class="nav-bar-link active">TBC x USAID</a></li>
                 <li><a href="" class="nav-bar-link inactive">რისკები</a></li>
             </ul>
+            <div class="content"></div>
             <div class="menu-btn" onclick="toggleMenu()">
                 <div class="btn-line btn-line-first"></div>
                 <div class="btn-line btn-line-second"></div>
@@ -58,7 +59,7 @@
             </ul>
         </nav>
     </header>
-    <section class="main-container content" id="main-container">
+    <section class="main-container" id="main-container">
         <!-- Welcome section -->
         <div class="welcome-div">
             <img class="dektop-cover-img" src="./images/cover.jpg" alt="cover, tbc-cover">
@@ -389,5 +390,18 @@
 
     <!-- Script, app.js link -->
     <script src="./app.js"></script>
+    <script>
+        let prevScrollpos = window.pageYOffset;
+
+        window.onscroll = function() {
+        let currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.querySelector("header").classList.remove('hide'); // Show the navbar
+        } else {
+            document.querySelector("header").classList.add('hide'); // Hide the navbar
+        }
+        prevScrollpos = currentScrollPos;
+        }
+    </script>
 </body>
 </html>

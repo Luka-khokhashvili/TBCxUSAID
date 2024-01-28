@@ -156,6 +156,7 @@
     }
 
     .footer-tbc-logo {
+        position: static;
         order: 0;
         width: 165px;
     }
